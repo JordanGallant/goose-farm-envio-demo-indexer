@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=./node_modules/envio/evm.schema.json
+name: goose
+networks:
+- id: 42161
+  start_block: 0
+  contracts:
+  - name: USDVault
+    address:
+    - 0x0874F961178879cDbDe3500544C49F864F232899
+    handler: src/EventHandlers.ts
+    events:
+    - event: CreateLp(address lp)
+    - event: Deposit(uint256 indexed id, address user, uint256 depositAsset, uint256 depositShare, uint256 price, uint256 lockId, uint256 lockTime, uint256 totalShares, uint256 createTime)
+    - event: Initialized(uint64 version)
+    - event: Redeem(uint256 indexed id, address user, uint256 redeemAsset, uint256 redeemShare, uint256 price, uint256 lockId, uint256 lockTime, uint256 totalShares, uint256 createTime)
+    - event: UnLockDeposit(uint256 indexed lockId, address user, uint256 share, uint256 createTime)
+    - event: UnLockRedeem(uint256 indexed lockId, address user, uint256 share, uint256 createTime)
+    - event: UpdateCustodian(address user, address oldCustodian, address currentCustodian)
+    - event: UpdateDataStorage(address user, address oldStorage, address currentStorage)
+    - event: UpdatePreCustodian(address user, address oldCustodian, address currentCustodian)
+    - event: Withdraw(uint256 indexed id, address user, uint256 withdrawAsset, uint256 withdrawShare, uint256 price, uint256 totalShares, uint256 createTime)
+rollback_on_reorg: false

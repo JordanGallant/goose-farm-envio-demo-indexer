@@ -1,0 +1,84 @@
+type USDVault_CreateLp {
+  id: ID!
+  lp: String!
+}
+
+type USDVault_Deposit {
+  id: ID!
+  event_id: BigInt!
+  user: String!
+  depositAsset: BigInt!
+  depositShare: BigInt!
+  price: BigInt!
+  lockId: BigInt!
+  lockTime: BigInt!
+  totalShares: BigInt!
+  createTime: BigInt!
+}
+
+type USDVault_Initialized {
+  id: ID!
+  version: BigInt!
+}
+
+type USDVault_Redeem {
+  id: ID!
+  event_id: BigInt!
+  user: String!
+  redeemAsset: BigInt!
+  redeemShare: BigInt!
+  price: BigInt!
+  lockId: BigInt!
+  lockTime: BigInt!
+  totalShares: BigInt!
+  createTime: BigInt!
+}
+
+type USDVault_UnLockDeposit {
+  id: ID!
+  lockId: BigInt!
+  user: String!
+  share: BigInt!
+  createTime: BigInt!
+}
+
+type USDVault_UnLockRedeem {
+  id: ID!
+  lockId: BigInt!
+  user: String!
+  share: BigInt!
+  createTime: BigInt!
+}
+
+type USDVault_UpdateCustodian {
+  id: ID!
+  user: String!
+  oldCustodian: String!
+  currentCustodian: String!
+}
+
+type USDVault_UpdateDataStorage {
+  id: ID!
+  user: String!
+  oldStorage: String!
+  currentStorage: String!
+}
+
+type USDVault_UpdatePreCustodian {
+  id: ID!
+  user: String!
+  oldCustodian: String!
+  currentCustodian: String!
+}
+
+type USDVault_Withdraw {
+  id: ID!
+  event_id: BigInt!
+  user: String!
+  withdrawAsset: BigInt!
+  withdrawShare: BigInt!
+  price: BigInt!
+  totalShares: BigInt!
+  createTime: BigInt!
+}
+
